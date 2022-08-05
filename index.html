@@ -10,50 +10,72 @@
 </head>
 
 <body>
+
     <div class="calculator">
         <h1><u>NSC Calculator</u></h1>
-        <!-- start principal amount -->
-        <label for="amount">Principal Amount</label>
-        <br>
-        <input type="number" placeholder="Enter principal Amount" id="amount">
-        <br>
-        <!-- end principal amount  -->
-        <label for="rate">Rate (6.8%)</label>
-        <br>
-        <!-- <input type="number" placeholder="Enter Rate" id="rate"> -->
-        <br>
-        <!-- start time  -->
-        <label for="time">Time (5 yr)</label>
+        <!-- ===================================================================================== -->
+        <p> <u>Principal Amount</u></p>
+        <input type="range" min="1000" max="1000000" value="1000" class="slider" id="amount">
+    <label><p>Value: <span id="demo"></span></p></label>
+
+
+        <p> <u>Rate of intrest</u></p>
+        <input type="range" min="1" max="12" value="1" step="0.1" class="slider1" id="rate">
+       <label> <p>Value: <span id="demo1"></span></p></label>
+
+        <p> <u>Time (5 yr)</u></p>
+        
         <br>
 
-        <!-- <input type="number" placeholder="Enter Time" id="time"> -->
-        <br>
         <button onclick="answer()">Calculate</button>
         <p>Principal Amount: <span id="output_1"></span></p>
         <p>Total interest: <span id="output_2"></span></p>
-        <p>Total Value: <span id="output_3"></span></p>
+        <p>Total amount: <span id="output_3"></span></p>
+       
     </div>
+
+
+
     <script>
         function answer() {
             var amount_input = parseInt(document.getElementById("amount").value);
 
 
-            // var rate_input = parseInt(document.getElementById("rate").value);
+            var rate_input   = Number(document.getElementById("rate").value);
 
 
             // var time_input = parseInt(document.getElementById("time").value);
 
 
-            var interest =(amount_input* Math.pow(( 1+6.8 / 100),  5))-amount_input ;
-
+            var interest = amount_input * Math.pow((1 + (rate_input)/100),5 )-1000 ;
             var total = interest + amount_input;
-
+          
+           
             document.getElementById("output_1").innerHTML = amount_input;
 
             document.getElementById("output_2").innerHTML = interest;
 
             document.getElementById("output_3").innerHTML = total;
+
         }
+
+            var slider = document.getElementById("amount");
+            var output = document.getElementById("demo");
+            output.innerHTML = slider.value;
+
+            slider.oninput = function () {
+                output.innerHTML = this.value;
+            }
+
+
+            var slider1 = document.getElementById("rate");
+            var output1 = document.getElementById("demo1");
+            output1.innerHTML = slider1.value;
+
+            slider1.oninput = function () {
+                output1.innerHTML = this.value;
+            }
+        
     </script>
 
 </body>
