@@ -47,15 +47,16 @@
             // var time_input = parseInt(document.getElementById("time").value);
 
 
-            var interest = amount_input * Math.pow((1 + (rate_input)/100),5 )-1000 ;
+            var interest = amount_input * Math.pow((1 + rate_input/100),5 ) ;
+
             var total = interest + amount_input;
           
            
             document.getElementById("output_1").innerHTML = amount_input;
 
-            document.getElementById("output_2").innerHTML = interest;
+            document.getElementById("output_2").innerHTML = interest - amount_input;
 
-            document.getElementById("output_3").innerHTML = total;
+            document.getElementById("output_3").innerHTML = total - amount_input;
 
         }
 
