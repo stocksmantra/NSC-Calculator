@@ -1,0 +1,121 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: black;
+    /* text-decoration-line: underline; */
+    text-decoration-style: line;
+    /* text-decoration-color: red; */
+}
+
+#interestRate {
+    width: 450px;
+    height: 7px;
+    margin-left: auto;
+    margin-right: 20px;
+
+}
+
+#investmentAmount {
+    margin-left: auto;
+    margin-right: 160px;
+
+
+}
+
+#interestRateInput {
+    margin-left: auto;
+    margin-right: 160px;
+}
+
+#investmentPeriodInput {
+    margin-left: auto;
+    margin-right: 160px;
+
+}
+
+#interestRateSlider {
+    width: 420px;
+    height: 7px;
+    margin-left: auto;
+    margin-right: 160px;
+
+}
+
+#investmentAmountSlider {
+    width: 420px;
+    height: 7px;
+    margin-left: auto;
+    margin-right: 160px;
+}
+
+#compoundingFrequency {
+    float: right;
+    text-align: center;
+    margin-left: auto;
+    margin-right: 160px;
+
+}
+
+.container {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 20px;
+    background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+    background-color: lightskyblue;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="number"],
+input[type="range"] {
+    float: right;
+    margin-bottom: 10px;
+    height: 15px;
+    width: 80px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 8px;
+    font-size: 30px;
+    font-family: sans-serif;
+
+    color: #04AA6D;
+    background-color: #ffffff;
+
+    border-radius: 50px;
+    border-style: none;
+    box-shadow: 5px 20px 20px 2px rgb(234, 154, 236);
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+button:hover {
+    background-color: #a5f8b0;
+}
+
+button:hover {
+    opacity: 1;
+}
+
+#output {
+    font-weight: bold;
+    margin-top: 10px;
+}

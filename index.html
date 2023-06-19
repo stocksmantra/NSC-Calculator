@@ -4,81 +4,45 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="index.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>nsc</title>
+    <title>NSC Calculator</title>
+   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+    <div class="container">
+        <h1>NSC Calculator</h1><br>
+        <label for="investmentAmount">Amount Invested: <input type="number" id="investmentAmount" min="1000"
+                max="10000000" value="100000" step="0.01" oninput="updateInvestment();"></label><br>
+        <input type="range" id="investmentAmountSlider" min="1000" max="10000000" step="1000" value="100000"
+            oninput="updateInvestmentAmount();"><br><br>
 
-    <div class="calculator">
-        <h1><u>NSC Calculator</u></h1>
-        <!-- =============================NSC CALCULATOR================================== -->
-        <p> <u>Principal Amount</u></p>
-        <input type="range" min="1000" max="1000000" value="1000" class="slider" id="amount">
-    <label><p>Value: <span id="demo"></span></p></label>
+        <label for="interestRate">Rate of Interest: <input type="number" id="interestRateInput" min="0" max="20"
+                value="6" step="0.01" oninput="updateRateOfInterest();"></label><br>
+        <input type="range" id="interestRateSlider" min="0" max="20" step="0.01" value="8"
+            oninput="updateInterestRate();"><br><br>
+
+        <label for="investmentPeriod">Time Period (in years): <input type="number" id="investmentPeriodInput" min="5"
+                max="20" value="5" step="0.01" oninput="updateInvestmentPeriod();"></label><br><br>
 
 
-        <p> <u>Rate of intrest</u></p>
-        <input type="range" min="1" max="12" value="1" step="0.1" class="slider1" id="rate">
-       <label> <p>Value: <span id="demo1"></span></p></label>
+        <label for="compoundingFrequency">Compounding Frequency: <select id="compoundingFrequency"
+                onchange="updateCompoundingFrequency()">
+                <option value="1">Annual</option>
+                <option value="2">Semi-annual</option>
+                <option value="4">Quarterly</option>
+                <option value="12">Monthly</option>
+            </select></label> <br><br>
 
-        <p> <u>Time (5 yr)</u></p>
-        
-        <br>
+        <button onclick="calculate()">Calculate</button>
 
-        <button onclick="answer()">Calculate</button>
-        <p>Principal Amount: <span id="output_1"></span></p>
-        <p>Total interest: <span id="output_2"></span></p>
-        <p>Total amount: <span id="output_3"></span></p>
-       
+        <p id="output">Results:</p>
+        <p>Principal Amount: <span id="principalAmount"></span></p>
+        <p>Total Interest: <span id="totalInterest"></span></p>
+        <p>Maturity Amount: <span id="maturityAmount"></span></p>
+
     </div>
-
-
-
-    <script>
-        function answer() {
-            var amount_input = parseInt(document.getElementById("amount").value);
-
-
-            var rate_input   = Number(document.getElementById("rate").value);
-
-
-            // var time_input = parseInt(document.getElementById("time").value);
-
-
-            var interest = amount_input * Math.pow((1 + rate_input/100),5 ) ;
-
-            var total = interest + amount_input;
-          
-           
-            document.getElementById("output_1").innerHTML = amount_input;
-
-            document.getElementById("output_2").innerHTML = interest - amount_input;
-
-            document.getElementById("output_3").innerHTML = total - amount_input;
-
-        }
-
-            var slider = document.getElementById("amount");
-            var output = document.getElementById("demo");
-            output.innerHTML = slider.value;
-
-            slider.oninput = function () {
-                output.innerHTML = this.value;
-            }
-
-
-            var slider1 = document.getElementById("rate");
-            var output1 = document.getElementById("demo1");
-            output1.innerHTML = slider1.value;
-
-            slider1.oninput = function () {
-                output1.innerHTML = this.value;
-            }
-        
-    </script>
-
+<script src="main.js"></script>
 </body>
 
 </html>
